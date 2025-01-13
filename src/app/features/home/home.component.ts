@@ -59,7 +59,7 @@ export class HomeComponent implements AfterViewInit {
     this.messageQueue.push(["User", userMessage]);
     this.messageQueue.push(["Bot", botMessage]);
     console.log('Chamara queue', this.messageQueue);
-    this.scrollToBottom();
+    this.scrollToBottom(); // Ensure the scroll function is called after adding to the queue
   }
 
   private clearUserMsg(): void {
@@ -88,5 +88,4 @@ export class HomeComponent implements AfterViewInit {
       }
     }, 100);
   }
-
 }
