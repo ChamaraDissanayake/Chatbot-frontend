@@ -23,7 +23,6 @@ export class HomeComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     const toastElement = this.el.nativeElement.querySelector('#chatToast');
     this.renderer.listen(toastElement, 'hidden.bs.toast', () => {
-      console.log('Toast hidden');
       this.isShowChatButton(true);
       this.userMsg = 'exit';
       this.send();
@@ -42,10 +41,10 @@ export class HomeComponent implements AfterViewInit {
   public send(): void {
     if(this.userMsg.trim().length > 0 && !this.isLoading){
       this.isLoading = true;
+      this.addtoQueue('User', this.userMsg);
       this.apiService.sendMessage(this.userMsg).then((response) => {
-        console.log(response);
         this.botMsg = response;
-        this.addtoQueue(this.userMsg, this.botMsg);
+        this.addtoQueue('Bot', this.botMsg);
         this.clearUserMsg();
         this.isLoading = false;
       }).catch((error) => {
@@ -55,10 +54,8 @@ export class HomeComponent implements AfterViewInit {
     }
   }
 
-  addtoQueue(userMessage: string, botMessage: string): void{
-    this.messageQueue.push(["User", userMessage]);
-    this.messageQueue.push(["Bot", botMessage]);
-    console.log('Chamara queue', this.messageQueue);
+  addtoQueue(owner: string, message: string): void{
+    this.messageQueue.push([owner, message]);
     this.scrollToBottom(); // Ensure the scroll function is called after adding to the queue
   }
 

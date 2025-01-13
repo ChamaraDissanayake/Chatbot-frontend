@@ -2,6 +2,13 @@
   bottom: 1rem;
   right: 1rem;
   z-index: 1055;
+  height: 50px;
+  width: 50px;
+  transition: transform 0.3s ease;
+}
+
+.btn-chat:hover {
+  transform: scale(1.2);
 }
 
 .toast-body {
@@ -12,6 +19,8 @@
 .chat-history {
   display: flex;
   flex-direction: column;
+  height: 300px;
+  overflow-y: auto;
 }
 
 .user-message {
@@ -38,7 +47,3 @@
   justify-content: space-between;
 }
 
-.chat-history {
-  height: 200px;
-  overflow-y: auto;
-}
