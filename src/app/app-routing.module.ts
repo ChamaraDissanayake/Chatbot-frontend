@@ -3,19 +3,21 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'main',
-    loadChildren: () => import('./features/main.module').then(m => m.MainModule)
+    path: 'clients',
+    loadChildren: () => import('./features/clients/clients.module').then(m => m.ClientsModule)
   },
   {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'main'
+    path: 'messages',
+    loadChildren: () => import('./features/messages/messages.module').then(m => m.MessagesModule)
   },
+  {
+    path: 'schedules',
+    loadChildren: () => import('./features/schedules/schedules.module').then(m => m.SchedulesModule)
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-
 export class AppRoutingModule { }
