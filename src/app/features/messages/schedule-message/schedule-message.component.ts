@@ -51,7 +51,7 @@ export class ScheduleMessageComponent implements OnInit {
           // Handle the response based on its structure
           if (response && response.jobId) { // Adjust this condition based on your API response
             alert('Message scheduled successfully!');
-            this.router.navigate(['/messages', this.phoneNumber]);
+            this.router.navigate(['/messages/scheduled-messages']);
           } else {
             alert('Failed to schedule message. Please try again.');
           }

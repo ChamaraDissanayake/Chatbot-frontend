@@ -1,6 +1,6 @@
 export interface Schedule {
+  jobId: string; // Ensure this field exists
   to: string;
   body: string;
-  date: Date;
-  jobId?: string; // Optional, for tracking scheduled jobs
+  date: string | Date; // Date can be a string or Date object
 }

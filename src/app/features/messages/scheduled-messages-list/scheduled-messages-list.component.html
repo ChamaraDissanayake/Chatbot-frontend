@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <button class="btn btn-primary mb-3" routerLink="/client">Back</button>
+  <h2>Future Scheduled Messages</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>To</th>
+        <th>Message</th>
+        <th>Scheduled Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let message of scheduledMessages">
+        <td>{{ message.to }}</td>
+        <td>{{ message.body }}</td>
+        <td>{{ message.date | date: 'medium' }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="cancelScheduledMessage(message.jobId)">Cancel</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -5,12 +5,14 @@ import { MessageLogComponent } from './message-log/message-log.component';
 import { SendMessageComponent } from './send-message/send-message.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScheduleMessageComponent } from './schedule-message/schedule-message.component';
+import { ScheduledMessagesListComponent } from './scheduled-messages-list/scheduled-messages-list.component';
 
 @NgModule({
   declarations: [
     MessageLogComponent,
     SendMessageComponent,
-    ScheduleMessageComponent
+    ScheduleMessageComponent,
+    ScheduledMessagesListComponent
   ],
   imports: [
     CommonModule,

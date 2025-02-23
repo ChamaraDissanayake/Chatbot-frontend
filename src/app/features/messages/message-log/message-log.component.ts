@@ -28,11 +28,6 @@ export class MessageLogComponent implements OnInit {
   loadChatHistory(phoneNumber: string): void {
     this.messageService.getChatHistory(phoneNumber).subscribe((data) => {
       this.messages = data;
-      console.log(
-        "Chamara", this.messages
-
-      );
-
     });
   }
 }

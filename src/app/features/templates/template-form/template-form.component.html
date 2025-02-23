@@ -1,0 +1,17 @@
+<div class="container mt-4">
+  <h2>{{ isEditMode ? 'Edit Template' : 'Add Template' }}</h2>
+  <form [formGroup]="templateForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" formControlName="name" required>
+    </div>
+    <div class="form-group">
+      <label for="content">Content</label>
+      <textarea class="form-control" id="content" formControlName="content" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="templateForm.invalid">
+      {{ isEditMode ? 'Update Template' : 'Add Template' }}
+    </button>
+    <button type="button" class="btn btn-secondary mt-3 ms-2" (click)="router.navigate(['/templates'])">Cancel</button>
+  </form>
+</div>

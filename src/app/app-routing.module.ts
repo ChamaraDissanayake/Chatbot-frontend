@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'messages',
     loadChildren: () => import('./features/messages/messages.module').then(m => m.MessagesModule),
   },
+  {
+    path: 'templates',
+    loadChildren: () => import('./features/templates/templates.module').then((m) => m.TemplatesModule),
+  },
   { path: '', redirectTo: '/clients', pathMatch: 'full' }, // Default route
   { path: '**', redirectTo: '/clients' }, // Fallback route for unknown paths
 ];
