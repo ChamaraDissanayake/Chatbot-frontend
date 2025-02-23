@@ -78,7 +78,8 @@
               "buildTarget": "mini-crm:build:production"
             },
             "development": {
-              "buildTarget": "mini-crm:build:development"
+              "buildTarget": "mini-crm:build:development",
+              "hmr": false
             }
           },
           "defaultConfiguration": "development"

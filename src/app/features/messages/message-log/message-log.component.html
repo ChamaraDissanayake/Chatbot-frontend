@@ -1,1 +1,8 @@
-<p>message-log works!</p>
+<div class="container mt-4">
+  <h2>Message Log for {{ phoneNumber }}</h2>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let message of messages">
+      <strong>{{ message.timestamp | date: 'short' }}:</strong> {{ message.body }}
+    </li>
+  </ul>
+</div>

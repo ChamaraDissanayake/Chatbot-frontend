@@ -1,1 +1,29 @@
-<p>client-form works!</p>
+<div class="container mt-4">
+  <h2>{{ isEditMode ? 'Edit Client' : 'Add Client' }}</h2>
+  <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" formControlName="name" required>
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber" required>
+    </div>
+    <div class="form-group">
+      <label for="isActive">Status</label>
+      <select class="form-control" id="isActive" formControlName="isActive" required>
+        <option *ngFor="let option of isActiveOptions" [value]="option.value">
+          {{ option.label }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="chatHandover">Chat Handover</label>
+      <input type="checkbox" class="form-check-input" id="chatHandover" formControlName="chatHandover">
+    </div>
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="clientForm.invalid">
+      {{ isEditMode ? 'Update Client' : 'Add Client' }}
+    </button>
+    <button type="button" class="btn btn-secondary mt-3 ms-2" (click)="router.navigate(['/clients'])">Cancel</button>
+  </form>
+</div>

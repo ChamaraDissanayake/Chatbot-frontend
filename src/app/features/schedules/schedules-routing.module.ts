@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ScheduleMessageComponent } from './schedule-message/schedule-message.component';
 
-const routes: Routes = [{ path: '', component: ScheduleMessageComponent }];
+const routes: Routes = [
+  { path: '', component: ScheduleMessageComponent }, // Default route for /schedules
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class SchedulesRoutingModule { }
+export class SchedulesRoutingModule {}

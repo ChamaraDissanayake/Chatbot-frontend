@@ -1,5 +1,7 @@
 export interface Client {
-  name: string;
+  id: string;
   phoneNumber: string;
-  status: string;
+  name: string;
+  isActive: boolean; // Add this field
+  chatHandover?: boolean; // Optional field
 }
