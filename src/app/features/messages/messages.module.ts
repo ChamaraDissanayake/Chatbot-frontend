@@ -4,11 +4,13 @@ import { MessagesRoutingModule } from './messages-routing.module';
 import { MessageLogComponent } from './message-log/message-log.component';
 import { SendMessageComponent } from './send-message/send-message.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ScheduleMessageComponent } from './schedule-message/schedule-message.component';
 
 @NgModule({
   declarations: [
     MessageLogComponent,
-    SendMessageComponent
+    SendMessageComponent,
+    ScheduleMessageComponent
   ],
   imports: [
     CommonModule,

@@ -18,8 +18,12 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="chatHandover">Chat Handover</label>
-      <input type="checkbox" class="form-check-input" id="chatHandover" formControlName="chatHandover">
+      <label for="chatHandover">Chat With</label>
+      <select class="form-control" id="chatHandover" formControlName="chatHandover">
+        <option *ngFor="let option of chatHandoverOptions" [value]="option.value">
+          {{ option.label }}
+        </option>
+      </select>
     </div>
     <button type="submit" class="btn btn-primary mt-3" [disabled]="clientForm.invalid">
       {{ isEditMode ? 'Update Client' : 'Add Client' }}

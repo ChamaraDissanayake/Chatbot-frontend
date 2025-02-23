@@ -8,7 +8,7 @@ import { BaseUrl } from '../../shared/utils/constants/base-url';
   providedIn: 'root',
 })
 export class ScheduleService {
-  private apiUrl = `${BaseUrl}/schedules`;
+  private apiUrl = `${BaseUrl}/schedule`;
 
   constructor(private http: HttpClient) {}
 

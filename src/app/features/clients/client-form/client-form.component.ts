@@ -8,7 +8,7 @@ import { Client } from '../../../shared/models/client.model';
   selector: 'app-client-form',
   templateUrl: './client-form.component.html',
   styleUrls: ['./client-form.component.scss'],
-  standalone: false,
+  standalone: false
 })
 export class ClientFormComponent implements OnInit {
   clientForm: FormGroup;
@@ -17,6 +17,10 @@ export class ClientFormComponent implements OnInit {
   isActiveOptions = [
     { label: 'Active', value: true },
     { label: 'Inactive', value: false },
+  ];
+  chatHandoverOptions = [
+    { label: 'Human', value: true }, // true = Human
+    { label: 'Bot', value: false }, // false = Bot
   ];
 
   constructor(
@@ -29,7 +33,7 @@ export class ClientFormComponent implements OnInit {
       name: ['', Validators.required],
       phoneNumber: ['', Validators.required],
       isActive: [true, Validators.required], // Default to Active
-      chatHandover: [false], // Optional field
+      chatHandover: [false], // Default to Bot
     });
   }
 

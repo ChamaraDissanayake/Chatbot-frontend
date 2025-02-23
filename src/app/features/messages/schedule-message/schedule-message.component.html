@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <h2>Schedule Message</h2>
+  <form [formGroup]="scheduleForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="to">Phone Number</label>
+      <input type="text" class="form-control" id="to" formControlName="to" required>
+    </div>
+    <div class="form-group">
+      <label for="body">Message</label>
+      <textarea class="form-control" id="body" formControlName="body" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="date">Schedule Date and Time</label>
+      <input type="datetime-local" class="form-control" id="date" formControlName="date" required>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="scheduleForm.invalid">Schedule Message</button>
+    <button type="button" class="btn btn-secondary mt-3 ms-2" (click)="router.navigate(['/messages', phoneNumber])">Cancel</button>
+  </form>
+</div>
