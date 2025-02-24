@@ -7,7 +7,7 @@ This project consists of a Frontend and Backend for a chatbot application. The c
 This project is a chatbot application that integrates with Twilio to send and receive WhatsApp messages. The frontend is built with Angular, and the backend is built with Node.js and Express. The application allows users to send messages to clients, select templates, and dynamically replace placeholders like [Client's Name].
 
 # Live Demo
-Frontend Dashboard: https://chamaradissanayake.github.io/Chatbot-frontend/main/home
+Frontend Dashboard: https://chatbot-frontend-csykea58j-chamara-dissanayakes-projects.vercel.app/clients
 
 # Backend Server: https://chatbot-2ib4.onrender.com/
 
